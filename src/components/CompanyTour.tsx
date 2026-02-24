@@ -18,27 +18,12 @@ const CompanyTour = () => {
         {/* Video Container */}
         <div className="max-w-4xl mx-auto">
           <div className="relative aspect-video bg-muted rounded-sm overflow-hidden group cursor-pointer">
-            {/* Thumbnail */}
-            <img
-              src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1200&auto=format&fit=crop&q=80"
-              alt="Kay's Diamond factory tour"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            <video
+              src="/assets/company-tour.mp4"
+              className="w-full h-full object-cover"
+              controls
+              preload="metadata"
             />
-            
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/40 transition-colors duration-300" />
-            
-            {/* Play Button */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-primary-foreground rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:scale-110">
-                <Play className="w-8 h-8 md:w-10 md:h-10 text-primary ml-1" fill="currentColor" />
-              </div>
-            </div>
-
-            {/* Duration Badge */}
-            <div className="absolute bottom-4 right-4 px-3 py-1 bg-foreground/80 text-background text-sm rounded-sm">
-              3:45
-            </div>
           </div>
 
           {/* Video Description */}

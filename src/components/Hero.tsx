@@ -15,7 +15,7 @@ const Hero = () => {
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
-          src="/assets/factory-video.mp4"
+          src="/assets/hero-video.mp4"
           autoPlay
           loop
           muted
@@ -32,12 +32,12 @@ const Hero = () => {
           }`}
           style={{ pointerEvents: showCTA ? 'auto' : 'none' }}
         >
-          <div className="bg-white/40 backdrop-blur-lg text-primary rounded-2xl px-6 py-6 md:px-12 md:py-10 shadow-2xl flex flex-col items-center gap-2 border border-primary/10 max-w-2xl mx-auto">
-            <h2 className="text-md sm:text-xl md:text-2xl font-bold tracking-tight text-center">Your Trusted Diamond Jewelry Manufacturing Partner</h2>
-            <p className="text-[10px] sm:text-sm md:text-base text-primary/80 text-center max-w-xs">
+          <div className="text-primary px-6 py-6 md:px-12 md:py-10 flex flex-col items-center gap-2 md:gap-6 max-w-2xl mx-auto">
+            <h2 className=" text-white text-md sm:text-xl md:text-4xl font-bold tracking-tight text-center">Your Trusted Diamond Jewelry Manufacturing Partner</h2>
+            <p className="text-[10px] sm:text-sm md:text-base text-white text-center max-w-xs">
               Uncompromised Quality. Timeless Design. Skilled Craftsmanship.
             </p>
-            <Link href="/collections" className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-white text-xs md:text-base font-semibold rounded-full shadow-md hover:bg-primary/90 transition-colors">
+            <Link href="/collections" className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-black text-xs md:text-base font-semibold rounded-full shadow-md hover:bg-gray-200 transition-colors">
               Discover Collections
             </Link>
           </div>
