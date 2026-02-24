@@ -49,7 +49,7 @@ const Header = () => {
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
               aria-label="Contact on WhatsApp"
             >
-              <img src="assets/icons/whatsapp-icon.svg" alt="WhatsApp" className="w-8 h-8" />
+              <img src="/assets/icons/whatsapp-icon.svg" alt="WhatsApp" className="w-8 h-8" />
             </a>
             {/* Mobile Dropdown */}
             {isMenuOpen && (
