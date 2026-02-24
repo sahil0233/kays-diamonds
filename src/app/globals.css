@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Warm, sophisticated palette */
+    --background: 40 20% 98%;
+    --foreground: 240 0% 100%;
+
+    --card: 40 15% 96%;
+    --card-foreground: 30 10% 12%;
+
+    --popover: 40 20% 98%;
+    --popover-foreground: 30 10% 12%;
+
+    /* Stone/warm accent as primary */
+    --primary: 0 0% 0%;
+    --primary-foreground: 40 20% 98%;
+
+    /* Soft warm secondary */
+    --secondary: 35 12% 90%;
+    --secondary-foreground: 30 10% 20%;
+
+    --muted: 35 10% 92%;
+    --muted-foreground: 30 8% 45%;
+
+    /* Warm stone accent */
+    --accent: 28 25% 85%;
+    --accent-foreground: 30 15% 18%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 30 15% 25%;
+
+    --radius: 0.25rem;
+
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Spacing */
+    --section-padding: clamp(6rem, 20vw, 10rem);
+    --container-max: 1400px;
+
+    /* Shadows */
+    --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.04);
+    --shadow-soft: 0 4px 12px -2px rgb(0 0 0 / 0.06);
+    --shadow-elevated: 0 12px 32px -8px rgb(0 0 0 / 0.1);
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 10% 8%;
+    --foreground: 40 15% 92%;
+
+    --card: 30 10% 12%;
+    --card-foreground: 40 15% 92%;
+
+    --popover: 30 10% 10%;
+    --popover-foreground: 40 15% 92%;
+
+    --primary: 35 20% 85%;
+    --primary-foreground: 30 10% 8%;
+
+    --secondary: 30 8% 18%;
+    --secondary-foreground: 40 15% 88%;
+
+    --muted: 30 8% 20%;
+    --muted-foreground: 35 10% 60%;
+
+    --accent: 28 15% 25%;
+    --accent-foreground: 40 15% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 8% 22%;
+    --input: 30 8% 22%;
+    --ring: 35 20% 75%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply w-full mx-auto px-6 md:px-8 lg:px-12;
+    max-width: var(--container-max);
+  }
+
+  .section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+
+  .text-display {
+    font-family: var(--font-display);
+    @apply text-4xl md:text-5xl lg:text-6xl font-light leading-tight;
+  }
+
+  .text-heading {
+    font-family: var(--font-display);
+    @apply text-2xl md:text-3xl lg:text-4xl font-light;
+  }
+
+  .text-subheading {
+    font-family: var(--font-display);
+    @apply text-xl md:text-2xl font-normal;
+  }
+
+  .text-body-large {
+    @apply text-lg leading-relaxed;
+  }
+
+  .text-body {
+    @apply text-base leading-relaxed;
+  }
+
+  .text-small {
+    @apply text-sm leading-relaxed;
+  }
+
+  .text-caption {
+    @apply text-xs uppercase tracking-widest font-medium;
+  }
+
+  /* Link animations */
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-current origin-left;
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+  }
+
+  .link-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Image hover effect */
+  .image-hover {
+    @apply overflow-hidden;
+  }
+
+  .image-hover img {
+    transition: transform var(--transition-slow);
+  }
+
+  .image-hover:hover img {
+    transform: scale(1.03);
+  }
+
+  /* Card hover */
+  .card-hover {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Button base styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-foreground text-primary;
+    @apply text-sm uppercase tracking-widest font-medium;
+    transition: all var(--transition-base);
+  }
+
+  .btn-primary:hover {
+    @apply bg-foreground;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3.5 border border-foreground;
+    @apply text-sm uppercase tracking-widest font-medium;
+    transition: all var(--transition-base);
+  }
+
+  .btn-outline:hover {
+    @apply bg-foreground text-background;
+  }
+
+  /* Grid layouts */
+  /* Use Tailwind utility classes directly in JSX for .product-grid:
+     grid grid-cols-1 min-[380px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8
+  */
+}
+
+@layer utilities {
+  .fade-in {
+    animation: fadeIn var(--transition-slow) ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slideUp var(--transition-slow) ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stagger-1 { animation-delay: 100ms; }
+  .stagger-2 { animation-delay: 200ms; }
+  .stagger-3 { animation-delay: 300ms; }
+  .stagger-4 { animation-delay: 400ms; }
+}
