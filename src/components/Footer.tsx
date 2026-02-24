@@ -1,12 +1,10 @@
-"use client";
-
-import { getCollections } from "@/sanity/lib/fetchers";
+import { getCollectionsWithMeta } from "@/sanity/lib/fetchers";
 import Link from "next/link";
 
 
 
 const Footer = async () => {
-  const collections = await getCollections();
+  const collections = await getCollectionsWithMeta();
   return (
     <footer className="bg-primary text-primary-foreground border-t border-border">
       <div className="container-main section-padding">
@@ -46,15 +44,22 @@ const Footer = async () => {
           {/* Collections */}
           <div>
             <h4 className="text-caption text-foreground mb-4">Collections</h4>
-            {/* <ul className="space-y-3">
-              {collections.map((collection) => (
-              <li key={collection.id}>
-                <Link href={`/collections/${encodeURIComponent(collection.slug)}`} className="text-small link-underline text-foreground">
-                  {collection.title}
-                </Link>
-              </li>
-))}
-            </ul> */}
+            <ul className="space-y-3">
+              {collections
+                .filter((collection) => Boolean(collection.slug?.current))
+                .map((collection) => (
+                  <li key={collection._id}>
+                    <Link
+                      href={`/collections/${encodeURIComponent(
+                        collection.slug!.current
+                      )}`}
+                      className="text-small link-underline text-foreground"
+                    >
+                      {collection.title}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
           </div>
 
           {/* Contact */}
