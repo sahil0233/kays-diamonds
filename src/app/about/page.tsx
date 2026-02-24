@@ -42,7 +42,7 @@ const About = () => {
         <div className="container-main">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-heading mb-6">Our Philosophy</h2>
+              <h2 className="text-primary text-2xl font-normal mb-6">Our Philosophy</h2>
               <div className="space-y-4 text-body text-muted-foreground">
                 <p>
                   Every piece begins with a question:
@@ -57,7 +57,7 @@ const About = () => {
               </div>
             </div>
             <div>
-              <h2 className="text-heading mb-6">Craftsmanship</h2>
+              <h2 className="text-primary text-2xl font-normal mb-6">Craftsmanship</h2>
               <div className="space-y-4 text-body text-muted-foreground">
                 <p>
                   Our master jewellers combine time-honored techniques with
