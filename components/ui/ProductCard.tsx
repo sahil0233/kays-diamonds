@@ -8,7 +8,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link
-      href={`/product/${product.slug}`}
+      href={`/products/${product.slug}`}
       className="group block rounded-2xl border border-border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden focus-visible:ring-2 focus-visible:ring-primary/60"
     >
       {/* Image Container */}
