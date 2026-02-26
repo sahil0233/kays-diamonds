@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: 'Factory Video',
   description: 'From sourcing to finishing, every step happens under one roof.\nBuilt for consistency. Designed for scale.',
   alternates: {
-    canonical: 'https://kaysdiamonds.com/factory-video'
+    canonical: 'https://www.kaysdiamonds.com/factory-video'
   },
   openGraph: {
     title: 'Factory Video | Kays Diamonds',
     description: 'From sourcing to finishing, every step happens under one roof.\nBuilt for consistency. Designed for scale.',
-    url: 'https://kaysdiamonds.com/factory-video',
+    url: 'https://www.kaysdiamonds.com/factory-video',
     // images: [
     //   {
     //     url: '/og-about.jpg',   // make a custom image for this page, or remove and it'll use layout default

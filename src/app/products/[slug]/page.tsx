@@ -33,12 +33,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: product.name,
     description: product.description?.slice(0, 160),
     alternates: {
-      canonical: `https://kaysdiamonds.com/products/${slug}`
+      canonical: `https://www.kaysdiamonds.com/products/${slug}`
     },
     openGraph: {
       title: product.name,
       description: product.description?.slice(0, 160),
-      url: `https://kaysdiamonds.com/products/${slug}`,
+      url: `https://www.kaysdiamonds.com/products/${slug}`,
       // images: product.ogImage
       //   ? [{ url: product.ogImage, width: 800, height: 800, alt: product.title }]
       //   : undefined  // falls back to layout default OG image

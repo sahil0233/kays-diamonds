@@ -23,7 +23,7 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kaysdiamonds.com'),
+  metadataBase: new URL('https://www.kaysdiamonds.com'),
   title: {
     default: 'Kays Diamonds | Diamond Jewellery Manufacturer',
     template: '%s | Kays Diamonds'

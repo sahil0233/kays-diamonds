@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Collections',
   description: 'Explore our exquisite diamond jewelry collections, crafted with precision and care.',
   alternates: {
-    canonical: 'https://kaysdiamonds.com/collections'
+    canonical: 'https://www.kaysdiamonds.com/collections'
   },
   openGraph: {
     title: 'Collections | Kays Diamonds',
     description: 'Explore our exquisite diamond jewelry collections, crafted with precision and care.',
-    url: 'https://kaysdiamonds.com/collections',
+    url: 'https://www.kaysdiamonds.com/collections',
     // images: [
     //   {
     //     url: '/og-about.jpg',   // make a custom image for this page, or remove and it'll use layout default
