@@ -1,8 +1,30 @@
 import { getCollectionsWithMeta } from "@/sanity/lib/fetchers";
 import { urlFor } from "@/sanity/lib/image";
 import { Loader2, ArrowRight } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: 'Collections',
+  description: 'Explore our exquisite diamond jewelry collections, crafted with precision and care.',
+  alternates: {
+    canonical: 'https://kaysdiamonds.com/collections'
+  },
+  openGraph: {
+    title: 'Collections | Kays Diamonds',
+    description: 'Explore our exquisite diamond jewelry collections, crafted with precision and care.',
+    url: 'https://kaysdiamonds.com/collections',
+    // images: [
+    //   {
+    //     url: '/og-about.jpg',   // make a custom image for this page, or remove and it'll use layout default
+    //     width: 1200,
+    //     height: 630,
+    //     alt: 'Kays Diamonds Jewellery Manufacturing Facility'
+    //   }
+    // ]
+  }
+}
 
 const Collections = async () => {
   const collections = await getCollectionsWithMeta();

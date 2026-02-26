@@ -140,7 +140,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             ✕
           </button>
           <div
-            className="flex h-full w-full items-center justify-center overflow-auto"
+            className="flex h-full w-full items-center justify-center overflow-hidden"
             onWheel={(event) => {
               if (!event.ctrlKey) {
                 return
@@ -156,8 +156,8 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             <img
               src={currentImage}
               alt={productName}
-              className="block h-auto w-auto max-h-full max-w-full transition-[width,height] duration-200"
-              style={{ width: zoom === 1 ? 'auto' : `${zoom * 100}%`, height: 'auto' }}
+              className="block max-h-full max-w-full transition-transform duration-200"
+              style={{ transform: `scale(${zoom})`, width: 'auto', height: 'auto' }}
               onClick={(event) => event.stopPropagation()}
             />
           </div>

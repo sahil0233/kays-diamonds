@@ -9,7 +9,7 @@ import ColorSwatches from './ColorSwatches'
 import MetalOptions from './MetalOptions'
 import StoneTypeOptions from './StoneTypeOptions'
 import Image from 'next/image'
-
+import { Metadata } from 'next'
 
 export const revalidate = 60
 
@@ -17,8 +17,38 @@ interface PageProps {
   params: { slug: string }
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params
+  const product = await getProductBySlugFromSanity(slug)
+
+  // Fallback if product not found
+  if (!product) {
+    return {
+      title: 'Product Not Found',
+      robots: { index: false, follow: false }
+    }
+  }
+
+  return {
+    title: product.name,
+    description: product.description?.slice(0, 160),
+    alternates: {
+      canonical: `https://kaysdiamonds.com/products/${slug}`
+    },
+    openGraph: {
+      title: product.name,
+      description: product.description?.slice(0, 160),
+      url: `https://kaysdiamonds.com/products/${slug}`,
+      // images: product.ogImage
+      //   ? [{ url: product.ogImage, width: 800, height: 800, alt: product.title }]
+      //   : undefined  // falls back to layout default OG image
+    }
+  }
+}
+
+
+
 export default async function ProductPage({ params }: PageProps) {
-    
   const { slug } = await params
   const product = await getProductBySlugFromSanity(slug)
 

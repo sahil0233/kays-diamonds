@@ -1,5 +1,27 @@
 import { Gem, Sparkles, Award, Clock, Shield, Truck } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: 'Custom Manufacturing',
+  description: 'Diamond jewelry manufacturer and exporter with 7+ years of combined industry experience, serving B2B clients across international markets.',
+  alternates: {
+    canonical: 'https://kaysdiamonds.com/custom-manufacturing'
+  },
+  openGraph: {
+    title: 'Custom Manufacturing | Kays Diamonds',
+    description: 'Diamond jewelry manufacturer and exporter with 7+ years of combined industry experience, serving B2B clients across international markets.',
+    url: 'https://kaysdiamonds.com/custom-manufacturing',
+    // images: [
+    //   {
+    //     url: '/og-about.jpg',   // make a custom image for this page, or remove and it'll use layout default
+    //     width: 1200,
+    //     height: 630,
+    //     alt: 'Kays Diamonds Jewellery Manufacturing Facility'
+    //   }
+    // ]
+  }
+}
 
 const features = [
   {
