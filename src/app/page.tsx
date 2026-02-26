@@ -14,7 +14,7 @@ export default function Home () {
       <Testimonials />
       <GlobalCustomers />
       <QuickContact />
-      <CompanyTour />
+      {/* <CompanyTour /> */}
     </>
   )
 }
