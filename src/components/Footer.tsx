@@ -1,5 +1,6 @@
 import { getCollectionsWithMeta } from "@/sanity/lib/fetchers";
 import Link from "next/link";
+import Image from "next/image";
 
 
 
@@ -17,6 +18,21 @@ const Footer = async () => {
             <p className="mt-4 text-small text-primary-foreground/80 leading-relaxed">
               A diamond jewelry manufacturer known for executing detailed and challenging custom designs with precision.
             </p>
+            <div className="mt-4 flex gap-4">
+              <a 
+                href="https://www.instagram.com/kaysdiamonds_export/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary-foreground/80 transition-colors"
+              >
+                <Image 
+                  src="/assets/icons/instagram-icon.svg" 
+                  alt="Instagram" 
+                  width={24} 
+                  height={24}
+                />
+              </a>
+            </div>
           </div>
 
           {/* Navigation */}
