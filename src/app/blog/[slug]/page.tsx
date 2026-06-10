@@ -5,6 +5,7 @@ import { PortableText } from '@portabletext/react'
 import Link from 'next/link'
 import { ArrowLeft, Twitter, Linkedin, Facebook, Instagram } from 'lucide-react'
 import CTASection from '../components/CTASection'
+import ShareButton from '../components/ShareButton'
 import { client } from '@/sanity/lib/client'
 import { queries } from '@/sanity/lib/queries'
 import { BlogPost as PostType } from '../types'
@@ -168,6 +169,7 @@ export default async function BlogPostPage (props: Props) {
                 >
                   <Instagram className='h-5 w-5 text-gray-700' />
                 </a>
+                <ShareButton title={blogPost.title} />
                 {/* <a
                                     href="https://www.facebook.com/payshri"
                                     target="_blank"
@@ -209,6 +211,7 @@ export default async function BlogPostPage (props: Props) {
                     >
                       <Instagram className='h-5 w-5 text-gray-700' />
                     </a>
+                    <ShareButton title={blogPost.title} />
                     {/* <a
                                                 href="https://www.facebook.com/payshri"
                                                 target="_blank"
