@@ -99,8 +99,9 @@ export default async function BlogPostPage (props: Props) {
               src={urlFor(blogPost.featuredImage.url).url()}
               alt={blogPost.featuredImage.alt || blogPost.title}
               fill
-              loading='eager'
-              className='absolute inset-0 w-full h-full object-cover opacity-80'
+              priority
+              sizes='100vw'
+              className='absolute inset-0 h-full w-full object-cover opacity-80'
             />
           ) : (
             <div className='h-full w-full bg-gray-200 rounded-lg mb-8 flex items-center justify-center'>
