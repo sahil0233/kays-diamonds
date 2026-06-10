@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: 'https://www.kaysdiamonds.com/factory-video',
     },
         {
-      url: 'https://www.payshri.com/blog',
+      url: 'https://www.kaysdiamonds.com/blog',
       changeFrequency: "daily",
       lastModified: new Date(),
     },
