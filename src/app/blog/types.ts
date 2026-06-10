@@ -25,5 +25,6 @@ export type BlogPost = {
   publishedAt?: string
   featured?: boolean
   seoTitle?: string
-  seoDescription?: string
+  seoDescription?: string,
+  ogImage?: string
 }

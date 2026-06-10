@@ -1,5 +1,21 @@
 import { MetadataRoute } from 'next'
 import { getCollectionsWithMeta, getProductsByCollection } from '@/sanity/lib/fetchers'
+import { queries } from '@/sanity/lib/queries';
+import { client } from '@/sanity/lib/client';
+
+interface BlogSlug {
+  slug: string;
+  date: string;
+}
+
+async function getBlogsUrls(): Promise<MetadataRoute.Sitemap> {
+  const blogslugs = await client.fetch<BlogSlug[]>(queries.getallblogslugs);
+  
+  return blogslugs.map((post: BlogSlug) => ({
+    url: `https://www.kaysdiamonds.com/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+  }));
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticUrls: MetadataRoute.Sitemap = [
@@ -19,7 +35,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: 'https://www.kaysdiamonds.com/factory-video',
     },
+        {
+      url: 'https://www.payshri.com/blog',
+      changeFrequency: "daily",
+      lastModified: new Date(),
+    },
   ];
+
+  const blogUrls = await getBlogsUrls();
 
   // Fetch collections from Sanity
   const collections = await getCollectionsWithMeta();
@@ -44,5 +67,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  return [...staticUrls, ...collectionUrls, ...productUrls];
+  return [...staticUrls, ...collectionUrls, ...productUrls, ...blogUrls];
 }

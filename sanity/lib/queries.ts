@@ -171,6 +171,16 @@ export const queries = {
       "ogImage": ogImage.asset->url
     }
   `,
+    // -------------------------
+  // Get slugs of all blogs
+  // -------------------------
+
+  getallblogslugs: `
+  *[_type == "blog"]{
+  "slug": slug.current,
+  "date": publishedAt
+}
+  `,
 
   // -------------------------
   // PRODUCTS BY COLLECTION
@@ -204,4 +214,5 @@ export const queries = {
       featured
     }
   `,
+
 };
