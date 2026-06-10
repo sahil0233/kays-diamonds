@@ -130,6 +130,49 @@ export const queries = {
   `,
 
   // -------------------------
+  // BLOGS LIST
+  // -------------------------
+  blogsList: `
+    *[_type == "blog" && status == "published"] | order(publishedAt desc) {
+      _id,
+      title,
+      "slug": slug.current,
+      excerpt,
+      "featuredImage": featuredImage{ "url": asset->url, alt },
+      "categories": categories[]-> { _id, title, "slug": slug.current },
+      "author": author-> { _id, name, "slug": slug.current, "image": image.asset->url },
+      publishedAt,
+      featured,
+      seoTitle,
+      seoDescription
+    }
+  `,
+
+  // -------------------------
+  // SINGLE BLOG BY SLUG
+  // -------------------------
+  blogBySlug: `
+    *[_type == "blog" && slug.current == $slug][0] {
+      _id,
+      title,
+      "slug": slug.current,
+      excerpt,
+      body,
+      "featuredImage": featuredImage{ "url": asset->url, alt },
+      "categories": categories[]-> { _id, title, "slug": slug.current },
+      "author": author-> { _id, name, bio, "slug": slug.current, "image": image.asset->url },
+      publishedAt,
+      relatedPosts[]-> { _id, title, "slug": slug.current },
+      featured,
+      status,
+      seoTitle,
+      seoDescription,
+      seoKeywords,
+      "ogImage": ogImage.asset->url
+    }
+  `,
+
+  // -------------------------
   // PRODUCTS BY COLLECTION
   // -------------------------
   productsByCollection: `

@@ -158,6 +158,9 @@
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
   }
+  .top-section-padding {
+    padding-top: var(--section-padding);
+  }
 
   .text-display {
     font-family: var(--font-display);
@@ -254,6 +257,9 @@
     color: hsl(var(--background));
   }
 
+  .text-gradient {
+  @apply bg-[linear-gradient(135deg,#7A5A12_0%,#C9A227_20%,#FFF4B0_40%,#D4AF37_60%,#F7E27A_80%,#7A5A12_100%)] bg-clip-text text-transparent drop-shadow-sm;
+}
   /* Grid layouts */
   /* Use Tailwind utility classes directly in JSX for .product-grid:
      grid grid-cols-1 min-[380px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8
