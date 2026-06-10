@@ -14,6 +14,7 @@ const Header = () => {
     { href: "/factory-video", label: "Factory Video" },
     { href: "/custom-manufacturing", label: "Custom Manufacturing" },
     { href: "/about", label: "About Us" },
+    { href: "/blog", label: "Blog" },
   ];
 
   const isActive = (path: string) => pathname === path;
