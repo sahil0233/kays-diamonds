@@ -3,6 +3,7 @@ import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} min-h-screen flex flex-col bg-primary text-primary-foreground antialiased`}
       >
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
         <Header />
         {children}
         <Footer />
