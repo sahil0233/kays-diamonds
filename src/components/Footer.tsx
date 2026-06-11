@@ -86,8 +86,8 @@ const Footer = async () => {
                 Office
               </li>
               <li>
-                105, Amrut Shanti, mahidharpura<br />
-                Surat, Gujrat - 395003
+                G-1111, Surat Diamond Bourse, Dream City<br />
+                Surat, Gujarat - 395007
               </li>
               <li className="pt-2">
                 <a href="mailto:sahil.gangwani@kaysdiamonds.com" className="link-underline">
