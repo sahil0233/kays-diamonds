@@ -90,8 +90,8 @@ const Footer = async () => {
                 Surat, Gujrat - 395003
               </li>
               <li className="pt-2">
-                <a href="mailto:sahil.gangwani2024@gmail.com" className="link-underline">
-                  sahil.gangwani2024@gmail.com
+                <a href="mailto:sahil.gangwani@kaysdiamonds.com" className="link-underline">
+                  sahil.gangwani@kaysdiamonds.com
                 </a>
               </li>
             </ul>
