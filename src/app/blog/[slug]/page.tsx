@@ -92,8 +92,8 @@ export default async function BlogPostPage (props: Props) {
 
   return (
     <>
-      <main className='pt-2 flex-grow'>
-        <div className='relative h-[60vh] min-h-[400px] bg-gray-600'>
+      <main className='section-padding flex-grow'>
+        <div className='relative w-full aspect-video max-h-[60vh] overflow-hidden bg-gray-600'>
           {blogPost.featuredImage ? (
             <Image
               src={urlFor(blogPost.featuredImage.url).url()}
@@ -110,26 +110,26 @@ export default async function BlogPostPage (props: Props) {
           )}
           <div className='absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent' />
 
-          <div className='relative container mx-auto px-4 h-full flex items-end pb-16'>
-            <div className='max-w-3xl'>
+          <div className='relative container mx-auto px-4 h-full flex items-center md:items-end pb-12 md:pb-16'>
+            <div className='max-w-3xl w-full'>
               <Link
                 href='/blog'
-                className='inline-flex items-center text-white mb-6 hover:text-purple-300 transition-colors'
+                className='text-sm sm:text-md inline-flex items-center text-white mb-6 hover:text-purple-300 transition-colors'
               >
                 <ArrowLeft className='h-4 w-4 mr-2' />
                 Back to Articles
               </Link>
-              <h1 className='text-4xl md:text-5xl font-bold text-white mb-4'>
+              <h1 className='text-xl md:text-5xl font-bold text-white mb-4'>
                 {blogPost.title}
               </h1>
-              <div className='flex items-center space-x-4 text-white'>
+              <div className='flex flex-row items-center space-x-4 space-y-0 text-white'>
                 {blogPost.author?.image ? (
-                  <div className='relative w-12 h-12 rounded-full overflow-hidden'>
+                  <div className='relative w-8 h-8 md:w-14 md:h-14 rounded-full overflow-hidden shrink-0'>
                     <Image
                       src={urlFor(blogPost.author.image).url()}
                       alt={blogPost.author.name?.toString() || 'Author Image'}
                       fill
-                      sizes='100vw'
+                      sizes='48px'
                       className='object-cover'
                     />
                   </div>
@@ -139,8 +139,8 @@ export default async function BlogPostPage (props: Props) {
                   </div>
                 )}
                 <div>
-                  <p className='font-medium'>
-                    {blogPost.author?.name?.toString() || 'Guest Post'}
+                  <p className='font-medium text-xs'>
+                      {blogPost.author?.name?.toString() || 'Guest Post'}
                   </p>
                   <p className='text-sm opacity-75'>
                     {new Date(
@@ -255,6 +255,7 @@ export default async function BlogPostPage (props: Props) {
                               blogPost.author.name?.toString() || 'Author Image'
                             }
                             fill
+                            sizes='64px'
                             className='object-cover'
                           />
                         </div>
@@ -263,7 +264,7 @@ export default async function BlogPostPage (props: Props) {
                           <span className='text-gray-500 text-xs'>NA</span>
                         </div>
                       )}
-                      <div>
+                      <div className='text-gray-600'>
                         <p className='font-medium'>
                           {blogPost.author?.name?.toString() || 'Guest Post'}
                         </p>

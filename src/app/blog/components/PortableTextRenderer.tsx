@@ -37,6 +37,7 @@ const components: PortableTextComponents = {
           href={href}
           target={isExternal ? '_blank' : undefined}
           rel={isExternal ? 'noopener noreferrer' : undefined}
+          className="underline decoration-gray-300 text-gray-200 hover:text-gray-400"
         >
           {children}
         </a>
