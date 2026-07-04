@@ -11,6 +11,28 @@ import { urlFor } from '@/sanity/lib/image'
 
 const components: PortableTextComponents = {
   types: {
+    table: ({ value }: { value: { rows: { cells: string[] }[] } }) => (
+      <div className="overflow-x-auto my-6">
+        <table className="w-full border-collapse border border-gray-400">
+          <tbody>
+            {value.rows.map((row, i) => (
+              <tr key={i}>
+                {row.cells.map((cell, j) => (
+                  <td
+                    key={j}
+                    className={`border border-gray-400 px-4 py-2 ${
+                      i === 0 ? 'font-bold text-center' : ''
+                    }`}
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    ),
     // image: ({ value }: { value: SanityImage }) => {
     //   if (!value?.asset?._ref) return null
     //   return (
